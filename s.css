@@ -1,0 +1,192 @@
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins", sans-serif;
+}
+
+body{
+  background:radial-gradient(circle at bottom,#020617,#000);
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* ===== SPACE BACKGROUND ===== */
+.space-bg{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  overflow:hidden;
+}
+
+/* STARS */
+.stars{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(1px 1px at 20% 30%, white, transparent),
+    radial-gradient(1px 1px at 80% 40%, white, transparent),
+    radial-gradient(1px 1px at 60% 70%, white, transparent),
+    radial-gradient(2px 2px at 30% 80%, white, transparent);
+  animation: twinkle 6s infinite alternate;
+}
+
+@keyframes twinkle{
+  from{opacity:.4}
+  to{opacity:1}
+}
+
+/* ===== SOLAR SYSTEM ===== */
+.solar-system{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:400px;
+  height:400px;
+  transform:translate(-50%,-50%);
+}
+
+.sun{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:50px;
+  height:50px;
+  background:radial-gradient(circle,#ffdd55,#ff6a00);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  box-shadow:0 0 60px #ff9800;
+}
+
+.orbit{
+  position:absolute;
+  top:50%;
+  left:50%;
+  border:1px dashed rgba(255,255,255,.15);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  animation: rotate linear infinite;
+}
+
+.orbit span{
+  position:absolute;
+  top:-6px;
+  left:50%;
+  width:12px;
+  height:12px;
+  background:#60a5fa;
+  border-radius:50%;
+}
+
+/* ORBIT SIZES */
+.mercury{width:90px;height:90px;animation-duration:8s}
+.venus{width:140px;height:140px;animation-duration:12s}
+.earth{width:200px;height:200px;animation-duration:16s}
+.mars{width:260px;height:260px;animation-duration:20s}
+
+@keyframes rotate{
+  from{transform:translate(-50%,-50%) rotate(0deg)}
+  to{transform:translate(-50%,-50%) rotate(360deg)}
+}
+
+/* ===== HERO ===== */
+.space-hero{
+  height:70vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.4),#000);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+}
+
+.hero-content h1{
+  font-size:3.2rem;
+  letter-spacing:2px;
+}
+
+.hero-content span{
+  color:#38bdf8;
+  text-shadow:0 0 20px #38bdf8;
+}
+
+.hero-content p{
+  margin-top:10px;
+  color:#bae6fd;
+}
+
+/* ===== GALLERY ===== */
+#gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+  padding:20px;
+}
+
+@media(min-width:768px){
+  #gallery{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1024px){
+  #gallery{grid-template-columns:repeat(4,1fr)}
+}
+
+/* ===== CARD ===== */
+.card{
+  position:relative;
+  border-radius:18px;
+  overflow:hidden;
+  background:#020617;
+  box-shadow:0 0 30px rgba(56,189,248,.25);
+  opacity:0;
+  transform:translateY(25px);
+  transition:.6s ease;
+}
+
+.card.show{
+  opacity:1;
+  transform:none;
+}
+
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* ===== SPACE DOWNLOAD BUTTON ===== */
+.download-btn{
+  position:absolute;
+  bottom:12px;
+  left:50%;
+  transform:translateX(-50%);
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
+  color:#fff;
+  font-size:18px;
+  background:radial-gradient(circle,#38bdf8,#1e40af);
+  box-shadow:0 0 20px #38bdf8;
+  transition:.3s;
+}
+
+.download-btn:hover{
+  transform:translateX(-50%) scale(1.15);
+  box-shadow:0 0 40px #38bdf8;
+}
+
+.download-btn:active{
+  transform:translateX(-50%) scale(.85);
+}
