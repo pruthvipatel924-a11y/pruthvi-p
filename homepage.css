@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#0f172a,#020617);
+  color:#fff;
+}
+
+/* ================= UPDATED PREMIUM NAVBAR ================= */
+.premium-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 75px; /* Thoda height badhaya hai spacing ke liye */
+  display: flex;
+  justify-content: space-between; /* Links aur Logo ke beech balance */
+  align-items: center;
+  padding: 0 50px;
+  background: rgba(15, 23, 42, 0.6); /* Transparent Glass Look */
+  backdrop-filter: blur(15px); /* Stronger Blur effect */
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  animation: navDrop 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform: translateY(-100%);
+}
+
+/* Nav Left Container for Links */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Thoda gap badhaya hai */
+}
+
+/* Logo Styling - Glowing Effect */
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: 0.4s ease;
+}
+
+.logo span {
+  color: #38bdf8; /* Blue accent color */
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+}
+
+.logo:hover {
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
+  transform: scale(1.05);
+}
+
+/* Nav Links Styling */
+.nav-left a {
+  text-decoration: none;
+  color: #94a3b8; /* Muted color for non-hover state */
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 5px 0;
+}
+
+/* Hover State for Links */
+.nav-left a:hover {
+  color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+/* Moving Underline Animation */
+.nav-left a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+  box-shadow: 0 0 10px #38bdf8;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-left a:hover::after {
+  width: 100%;
+}
+
+/* Smooth Navbar Entry Animation */
+@keyframes navDrop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Mobile Tweaks */
+@media (max-width: 480px) {
+  .premium-navbar {
+    padding: 0 20px;
+    height: 65px;
+  }
+  .logo {
+    font-size: 18px;
+  }
+  .nav-left {
+    gap: 15px;
+  }
+  .nav-left a {
+    font-size: 13px;
+  }
+}
+
+/* ================= ABOUT CREATOR ================= */
+.about-section{
+  max-width:720px;
+  margin:90px auto 60px;
+  padding:45px 30px;
+  border-radius:28px;
+  background:rgba(255,255,255,0.07);
+  backdrop-filter:blur(18px);
+  text-align:center;
+}
+
+.about-section h2{
+  font-size:30px;
+  margin-bottom:18px;
+  color:#38bdf8;
+}
+
+.about-text{
+  font-size:15.5px;
+  line-height:1.8;
+  color:#e5e7eb;
+  margin-bottom:28px;
+}
+
+.about-text span{
+  color:#38bdf8;
+  font-weight:600;
+}
+
+/* SOCIAL LINKS */
+.social-links{
+  display:flex;
+  justify-content:center;
+  gap:22px;
+}
+
+.social-links a{
+  text-decoration:none;
+  padding:10px 26px;
+  border-radius:30px;
+  font-size:14px;
+  font-weight:500;
+  color:#38bdf8;
+  border:1px solid rgba(56,189,248,0.4);
+  transition:0.35s ease;
+}
+
+.social-links a:hover{
+  background:#38bdf8;
+  color:#020617;
+  box-shadow:0 0 22px rgba(56,189,248,0.7);
+  transform:translateY(-4px);
+}
+
+/* ================= MAIN ================= */
+.main-box{
+  max-width:480px;
+  margin:50px auto;
+  padding:26px;
+  border-radius:26px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:26px;
+}
+
+/* ================= CARD ================= */
+.card{
+  text-align:center;
+  cursor:pointer;
+  position:relative;
+  transition:0.35s;
+}
+
+.card:hover{
+  transform:translateY(-6px) scale(1.05);
+}
+
+.image-box{
+  width:120px;
+  height:120px;
+  margin:auto;
+  padding:6px;
+  border-radius:50%;
+  background:linear-gradient(145deg,#38bdf8,#0ea5e9);
+}
+
+.image-box img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.card p{
+  margin-top:12px;
+  font-weight:600;
+}
+
+/* Glow */
+.card::after{
+  content:"";
+  position:absolute;
+  inset:-6px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#38bdf8,#0ea5e9);
+  opacity:0;
+  filter:blur(14px);
+  z-index:-1;
+  transition:0.3s;
+}
+
+.card:hover::after{
+  opacity:0.6;
+}
+
+/* ================= FOOTER ================= */
+.site-footer{
+  margin-top:60px;
+  padding:30px 15px;
+  background:rgba(255,255,255,0.06);
+  text-align:center;
+}
+
+.footer-author span{
+  color:#38bdf8;
+}
+
+/* ================= PAGE LOAD ANIMATION ================= */
+.main-box{
+  animation: floatIn 1s ease forwards;
+  opacity:0;
+}
+
+@keyframes floatIn{
+  from{
+    opacity:0;
+    transform:translateY(40px) scale(0.96);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+/* ================= CARD REVEAL ON SCROLL ================= */
+.reveal{
+  opacity:0;
+  transform:translateY(40px) scale(0.9);
+  transition:0.8s cubic-bezier(.16,1,.3,1);
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+
+/* ================= PREMIUM HOVER FEEL ================= */
+.card{
+  transition:0.45s cubic-bezier(.16,1,.3,1);
+}
+
+.card:hover{
+  transform:translateY(-12px) scale(1.08);
+}
+
+.image-box{
+  transition:0.4s;
+}
+
+.card:hover .image-box{
+  box-shadow:0 0 35px rgba(56,189,248,0.7);
+}
+
+/* ================= SOFT PRESS EFFECT ================= */
+.card:active{
+  transform:scale(0.96);
+}
+
+@media (max-width:480px){
+  .logo{
+    font-size:20px;
+  }
+
+  .nav-left a{
+    font-size:14px;
+  }
+}
+
+/* ================= VARNA SAGA NAVBAR ================= */
+
+.vs-navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  height:70px;
+  padding:0 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:rgba(2,6,23,0.75);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  animation:vsNavDrop 0.9s ease forwards;
+}
+
+@keyframes vsNavDrop{
+  from{ transform:translateY(-100%); }
+  to{ transform:translateY(0); }
+}
+
+/* LOGO */
+.vs-logo{
+  font-family:'Orbitron', sans-serif;
+  font-size:24px;
+  letter-spacing:2px;
+  color:#38bdf8;
+  text-shadow:0 0 12px rgba(56,189,248,.6);
+  animation: logoPulse 3s infinite alternate;
+}
+
+@keyframes logoPulse{
+  from{ text-shadow:0 0 10px rgba(56,189,248,.4); }
+  to{ text-shadow:0 0 22px rgba(56,189,248,.9); }
+}
+
+/* MENU */
+.vs-menu{
+  list-style:none;
+  display:flex;
+  gap:28px;
+}
+
+.vs-menu li a{
+  text-decoration:none;
+  color:#e5e7eb;
+  font-size:15px;
+  position:relative;
+}
+
+.vs-menu li a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:#38bdf8;
+  transition:0.3s;
+}
+
+.vs-menu li a:hover{
+  color:#38bdf8;
+}
+
+.vs-menu li a:hover::after{
+  width:100%;
+}
+
+/* HAMBURGER */
+.vs-toggle{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+}
+
+.vs-toggle span{
+  width:24px;
+  height:2px;
+  background:#e5e7eb;
+  transition:0.3s;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .vs-toggle{
+    display:flex;
+  }
+
+  .vs-menu{
+    position:fixed;
+    top:70px;
+    left:0;
+    width:100%;
+    height:0;
+    overflow:hidden;
+    background:rgba(2,6,23,0.95);
+    flex-direction:column;
+    align-items:center;
+    gap:24px;
+    transition:0.4s ease;
+  }
+
+  .vs-menu.active{
+    height:160px;
+    padding:30px 0;
+  }
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:26px;
+  justify-items:center;
+}
+
+/* ABSTRACT → CENTER FULL ROW */
+.grid .card:nth-child(3){
+  grid-column:1 / span 2;
+}
+
+/* CARS → LAST ROW CENTER */
+.grid .card:nth-child(5){
+  grid-column:1 / span 2;
+}
+
+/* CENTER ABSTRACT CARD */
+.grid .card:nth-child(3){
+  grid-column:1 / -1;   /* full row */
+  justify-self:center; /* exact center */
+}
+
+/* NORMAL 2-COLUMN FOR LAST ROW */
+.grid .card:nth-child(4),
+.grid .card:nth-child(5){
+  grid-column:auto;
+}

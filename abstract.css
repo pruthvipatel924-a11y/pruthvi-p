@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins", Arial, sans-serif;
+}
+
+body{
+  background:#0f172a;
+  color:white;
+  overflow-x:hidden;
+  position: relative;
+}
+
+/* HERO */
+.abstract-hero{
+  position:relative;
+  height:60vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(135deg,#6e45e2,#88d3ce);
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.25);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+}
+
+.hero-content h1{
+  font-size:3rem;
+  letter-spacing:2px;
+}
+
+.hero-content h1 span{
+  color:#ffd700;
+}
+
+.hero-content p{
+  margin-top:10px;
+  font-size:1.1rem;
+  color:#f0f0f0;
+}
+
+/* CANVAS */
+#abstractCanvas{
+  position:fixed;
+  inset:0;
+  z-index:0;
+}
+
+/* GALLERY – 2 images per row */
+  /* GALLERY – horizontal 2 images per row */
+#gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr); /* Hamesha 2 images per row */
+  gap:15px;
+  width:90%;
+  margin:30px auto;
+  position:relative;
+  z-index:5;
+}
+
+/* Tablet & Mobile Responsive */
+@media(max-width:768px){
+  #gallery{
+    grid-template-columns:repeat(2,1fr); /* 2 images per row even on tablet */
+    gap:12px;
+  }
+}
+
+@media(max-width:480px){
+  #gallery{
+    grid-template-columns:repeat(2,1fr); /* 2 images per row even on small mobile */
+    gap:10px;
+  }
+}
+
+/* CARD */
+.card{
+  position:relative;
+  border-radius:18px;
+  overflow:hidden;
+  background:#1a1a1a;
+  box-shadow:0 20px 40px rgba(0,0,0,0.5);
+  min-height:220px;
+  opacity:0;
+  transform:translateY(20px);
+  transition:0.6s ease;
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* IMAGE */
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transform:scale(1.05);
+  transition:opacity 0.6s ease, transform 0.6s ease;
+}
+
+.card img.loaded{
+  opacity:1;
+  transform:scale(1);
+}
+
+/* DOWNLOAD BUTTON */
+.download-btn{
+  position:absolute;
+  bottom:12px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:12px 22px;
+  font-size:14px;
+  border-radius:999px;
+  color:#fff;
+  background:linear-gradient(45deg,#ff6ec4,#7873f5);
+  overflow:hidden;
+  transition:0.3s ease;
+}
+
+.download-btn:hover{
+  transform:translateX(-50%) scale(1.05) rotate(-2deg);
+  box-shadow:0 0 25px rgba(255,110,196,0.9),0 0 60px rgba(120,115,245,0.5);
+}
+.download-btn:active{
+  transform:translateX(-50%) scale(0.88);
+  box-shadow:0 0 15px rgba(255,110,196,1);
+}
